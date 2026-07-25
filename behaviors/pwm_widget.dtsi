@@ -1,7 +1,0 @@
-/ {
-    behaviors {
-        pwm_widget: pwm_widget {
-            compatible = "zmk,behavior-pwm-widget";
-        };
-    };
-};
