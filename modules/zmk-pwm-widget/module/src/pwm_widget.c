@@ -47,7 +47,7 @@ ZMK_SUBSCRIPTION(pwm_widget, layer_state_changed);
 
 int pwm_widget_init(void) {
     for (int i = 0; i < 255; i++) {
-        pwm_set_rgb(i, 0, 0);
+        pwm_set_rgb(i, 0, i);
         k_msleep(2);
     }
     return 0;
