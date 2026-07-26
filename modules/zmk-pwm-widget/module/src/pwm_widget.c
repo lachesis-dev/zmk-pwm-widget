@@ -5,13 +5,14 @@
 #include <zmk/pwm_widget.h>
 
 #define PWM_NODE DT_NODELABEL(pwm0)
+#define PWM_PERIOD 32767
 
 static const struct device *pwm_dev = DEVICE_DT_GET(PWM_NODE);
 
 static void pwm_set_rgb(uint8_t r, uint8_t g, uint8_t b) {
-    pwm_set(pwm_dev, 2, 255, r);  // 赤
-    pwm_set(pwm_dev, 1, 255, g);  // 緑
-    pwm_set(pwm_dev, 0, 255, b);  // 青
+    pwm_set(pwm_dev, 2, PWM_PERIOD, r);  // 赤
+    pwm_set(pwm_dev, 1, PWM_PERIOD, g);  // 緑
+    pwm_set(pwm_dev, 0, PWM_PERIOD, b);  // 青
 }
 
 static int pwm_widget_listener(const zmk_event_t *eh) {
