@@ -42,8 +42,8 @@ static int pwm_widget_listener(const zmk_event_t *eh) {
     return 0;
 }
 
-ZMK_LISTENER(pwm_widget, pwm_widget_listener);
-ZMK_SUBSCRIPTION(pwm_widget, layer_state_changed);
+// ZMK_LISTENER(pwm_widget, pwm_widget_listener);
+// ZMK_SUBSCRIPTION(pwm_widget, layer_state_changed);
 
 int pwm_widget_init(void) {
     for (int i = 0; i < 255; i++) {
