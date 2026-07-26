@@ -10,9 +10,9 @@
 static const struct device *pwm_dev = DEVICE_DT_GET(PWM_NODE);
 
 static void pwm_set_rgb(uint8_t r, uint8_t g, uint8_t b) {
-    pwm_set(pwm_dev, 2, PWM_PERIOD, r * 257);  // 赤
-    pwm_set(pwm_dev, 1, PWM_PERIOD, g * 257);  // 緑
-    pwm_set(pwm_dev, 0, PWM_PERIOD, b * 257);  // 青
+    pwm_set(pwm_dev, 2, PWM_PERIOD, - r * 257);  // 赤
+    pwm_set(pwm_dev, 1, PWM_PERIOD, - g * 257);  // 緑
+    pwm_set(pwm_dev, 0, PWM_PERIOD, - b * 257);  // 青
 }
 
 static int pwm_widget_listener(const zmk_event_t *eh) {
