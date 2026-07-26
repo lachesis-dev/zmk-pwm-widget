@@ -46,5 +46,6 @@ ZMK_LISTENER(pwm_widget, pwm_widget_listener);
 ZMK_SUBSCRIPTION(pwm_widget, layer_state_changed);
 
 int pwm_widget_init(void) {
+    pwm_set_rgb(255, 0, 0);
     return 0;
 }
